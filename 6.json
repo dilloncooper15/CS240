@@ -1,0 +1,8 @@
+{"name": "Basement",
+ "description": "You are now in the basement. You have the visibility of a bat, minus the sonar (of course).",
+ "neighbors": {"n":11,
+			   "up":2,
+			   "e":13,
+			   "w":12
+			  }
+}

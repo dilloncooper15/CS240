@@ -1,0 +1,6 @@
+{"name": "Bar Room",
+ "description": "You're standing in the Bar Room.",
+ "neighbors": {"e":14,
+			   "w":6
+			  }
+}

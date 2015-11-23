@@ -1,0 +1,7 @@
+{"name": "Second Floor Landing",
+ "description": "You're standing on the Second Floor Landing.",
+ "neighbors": {"down":2,
+			   "n":7,
+			   "up":8
+			  }
+}

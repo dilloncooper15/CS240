@@ -1,0 +1,7 @@
+{"name": "Third Floor Hallway",
+ "description": "You're standing in the Third Floor Hallway.",
+ "neighbors": {"down":5,
+			   "w":10,
+			   "n":9
+			  }
+}
