@@ -1,4 +1,0 @@
-import Items
-
-class Player():
-	

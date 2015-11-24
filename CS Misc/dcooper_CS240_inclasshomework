@@ -1,1 +1,0 @@
-import(http://apps.who.int/gho/athena/data/xmart.csv?target=GHO/WHS3_45&profile=crosstable&filter=COUNTRY:*&x-sideaxis=COUNTRY&x-topaxis=GHO;YEAR)
