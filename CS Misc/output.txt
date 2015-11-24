@@ -1,0 +1,17 @@
+Enter a student record (blank to end): Hufflin, 2, Measely, Don
+Enter a student record (blank to end): Gryffinpuff, 2, Cotter, Terry
+Enter a student record (blank to end): Hufflin, 2, Measely, Winny
+Enter a student record (blank to end): Slytherclaw, 1, Hickory, Frederick
+Enter a student record (blank to end): Ravendor, 3, Danger, Harmony
+Enter a student record (blank to end): Gryffinpuff, 1, Dovewood, Juna
+Enter a student record (blank to end): Ravendor, 7, Cotter, Tilly
+Enter a student record (blank to end): Slytherclaw, 6, Alloy, Franco
+Enter a student record (blank to end): 
+Gryffinpuff, 1, Dovewood, Juna
+Gryffinpuff, 2, Cotter, Terry
+Hufflin, 2, Measely, Don
+Hufflin, 2, Measely, Winny
+Ravendor, 3, Danger, Harmony
+Ravendor, 7, Cotter, Tilly
+Slytherclaw, 1, Hickory, Frederick
+Slytherclaw, 6, Alloy, Franco

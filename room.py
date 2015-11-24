@@ -2,21 +2,23 @@ import json
 import sqlite3
 
 
-def get_room(id, dbfile):
+def load_db(dbfile):
     ret = None
+    room_dict = {}
 
     con = sqlite3.connect(dbfile)
-
-    for row in con.execute("select json from rooms where id=?", (id,)):
+    id = 0
+    for row in con.execute("select json from rooms"):
         jsontext = row[0]
+        print(jsontext)
         d = json.loads(jsontext)
         d['id'] = id
         ret = Room(**d)
-        break
+        room_dict[id] = ret
 
     con.close()
 
-    return ret
+    return room_dict
 
 
 class Room():

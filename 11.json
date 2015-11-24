@@ -1,4 +1,4 @@
 {"name": "Basement Round Room",
- "description": "You're standing in the Basement Round Room.",
- "neighbors": {"s":6,}
+ "description": "You're standing in the Basement Round Room. A large table littered in cups and bottles is in the middle of the room. Head South to exit the room.",
+ "neighbors": {"s":6}
 }

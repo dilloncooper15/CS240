@@ -1,5 +1,5 @@
 import cmd
-from room import get_room
+from room import load_db
 import textwrap
 import shutil
 import tempfile
@@ -12,21 +12,24 @@ class Game(cmd.Cmd):
         self.dbfile = tempfile.mktemp()
         shutil.copyfile("game.db", self.dbfile)
 
-        self.loc = get_room(1, self.dbfile)
-        # self.look()
+        self.room_dict = load_db(self.dbfile)
+        # room_dict = {1: room, 2: room, 3: room}
+
+        self.loc = self.room_dict[1]
+        self.look()
 
     def move(self, dir):
         newroom = self.loc._neighbor(dir)
         if newroom is None:
             print("you can't go that way!")
         else:
-            self.loc = get_room(newroom, self.dbfile)
+            self.loc = self.room_dict[newroom]
+            self.look()
             print(self.loc.name)
             print(self.loc.visited)
             if self.loc.visited is False:
                 self.loc.visited = True
                 print(self.loc.visited)
-            
                 print()
                 for line in textwrap.wrap(self.loc.description, 72):
                     print(line)
@@ -68,12 +71,13 @@ class Game(cmd.Cmd):
 
     def do_look(self, args):
         """Lets the user look around"""
-        self.look('look')
+        self.look()
 
     def do_save(self, args):
         """Saves the game"""
         shutil.copyfile(self.dbfile, args)
         print("The game was saved to {0}".format(args))
+
 
 if __name__ == "__main__":
     g = Game()

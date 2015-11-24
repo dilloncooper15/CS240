@@ -1,0 +1,6 @@
+model - representation of your data
+view - layout, what the user sees.
+controller - manages what happens in the view
+
+Tk() - 
+OpenGL
