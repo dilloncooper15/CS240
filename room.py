@@ -7,10 +7,9 @@ def load_db(dbfile):
     room_dict = {}
 
     con = sqlite3.connect(dbfile)
-    id = 0
-    for row in con.execute("select json from rooms"):
-        jsontext = row[0]
-        print(jsontext)
+    for id, jsontext in con.execute("select id, json from rooms"):
+        # jsontext = row[0]
+        # print(jsontext)
         d = json.loads(jsontext)
         d['id'] = id
         ret = Room(**d)

@@ -1,4 +1,9 @@
 {"name": "Foyer",
  "description": "You are standing in the foyer. There is a staircase that you can choose to either go upstairs or go downstairs to the dark abyss known as the basement. In front of you there is a closed door that possibly leads to a room. To the west there is a dimly lit round room. Behind you is the front door, which is your only exit from the house.",
- "neighbors": {"w":3, "n":4, "up":5, "down":6, "s":1}
+ "neighbors": {"w":3,
+ 			   "n":4,
+ 			   "up":5,
+ 			   "down":6,
+ 			   "s":1
+ 			  }
 }

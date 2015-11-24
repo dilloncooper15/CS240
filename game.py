@@ -23,19 +23,20 @@ class Game(cmd.Cmd):
         if newroom is None:
             print("you can't go that way!")
         else:
+            print()
             self.loc = self.room_dict[newroom]
             self.look()
-            print(self.loc.name)
-            print(self.loc.visited)
+            # print(self.loc.name)
+            # print(self.loc.visited)
             if self.loc.visited is False:
                 self.loc.visited = True
-                print(self.loc.visited)
-                print()
-                for line in textwrap.wrap(self.loc.description, 72):
-                    print(line)
+                # print(self.loc.visited)
+                # print()
+                # for line in textwrap.wrap(self.loc.description, 72):
+                #     print(line)
 
     def look(self):
-        print(self.loc.name)
+        # print(self.loc.name)
         print()
         for line in textwrap.wrap(self.loc.description, 72):
             print(line)
