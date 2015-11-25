@@ -9,6 +9,7 @@ class Game(cmd.Cmd):
     def __init__(self):
         cmd.Cmd.__init__(self)
 
+        self.inventory = []
         self.dbfile = tempfile.mktemp()
         shutil.copyfile("game.db", self.dbfile)
 
@@ -78,6 +79,23 @@ class Game(cmd.Cmd):
         """Saves the game"""
         shutil.copyfile(self.dbfile, args)
         print("The game was saved to {0}".format(args))
+
+    def get_inventory(self, args):
+        """Player's inventory"""
+        if args not in self.loc.inv:
+            if args == args.name:
+                print('\nThis is not an applicable object for your\
+                    inventory.\n')
+                return
+            else:
+                for args in self.loc.inv:
+                    if args == args.name:
+                        self.inventory.append(args)
+                        self.loc.inv.remove(args)
+                        print('\nOkay.\n')
+                        break
+                    else:
+                        print('\nThere is no {} here!\n'.format(args))
 
 
 if __name__ == "__main__":
