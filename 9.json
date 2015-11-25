@@ -1,4 +1,5 @@
 {"name": "Third Floor Round Room",
  "description": "You're standing in the Third Floor Round Room. There are four beds and an assortment of desks within the room. You can head south to return to the Third Floor Hallway.",
- "neighbors": {"s":8}
+ "neighbors": {"s":8},
+ "inv": [{"name": "None", "descript": "None."}]
 }

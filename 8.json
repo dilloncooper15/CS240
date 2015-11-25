@@ -1,4 +1,5 @@
 {"name": "Third Floor Hallway",
  "description": "You're standing in the Third Floor Hallway. You can make out two closed doors, one to the west and one to the north. You can also choose to head back downstairs to the Second Floor Landing.",
- "neighbors": {"down":5, "w":10, "n":9}
+ "neighbors": {"down":5, "w":10, "n":9},
+ "inv": [{"name": "None", "descript": "None."}]
 }

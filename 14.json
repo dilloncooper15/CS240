@@ -1,4 +1,5 @@
 {"name": "Back Yard",
  "description": "You're standing outside the house in the back yard. Overgrown weeds pierce through a collection of rocks. You can see many buildings flanking the Adelphic House. Head West to re-enter the house.",
- "neighbors": {"w":13}
+ "neighbors": {"w":13},
+ "inv": [{"name": "None", "descript": "None."}]
 }

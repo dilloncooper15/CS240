@@ -1,4 +1,5 @@
 {"name": "President's Room",
  "description": "You're standing in the President's Room. Two beds on either side are seperated by a television. Head East to return to the Third Floor Hallway.",
- "neighbors": {"e":8}
+ "neighbors": {"e":8},
+ "inv": [{"name": "None", "descript": "None."}]
 }

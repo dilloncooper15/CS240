@@ -83,19 +83,19 @@ class Game(cmd.Cmd):
     def get_inventory(self, args):
         """Player's inventory"""
         if args not in self.loc.inv:
-            if args == args.name:
-                print('\nThis is not an applicable object for your\
-                    inventory.\n')
-                return
+            # if args == args.name:
+            print('\nThis is not an applicable object for your\
+                inventory.\n')
+            return
+        else:
+            for args in self.loc.inv:
+                # if args == args.name:
+                self.inventory.append(args)
+                self.loc.inv.remove(args)
+                print('\nOkay.\n')
+                break
             else:
-                for args in self.loc.inv:
-                    if args == args.name:
-                        self.inventory.append(args)
-                        self.loc.inv.remove(args)
-                        print('\nOkay.\n')
-                        break
-                    else:
-                        print('\nThere is no {} here!\n'.format(args))
+                print('\nThere is no {} here!\n'.format(args))
 
 
 if __name__ == "__main__":
