@@ -5,36 +5,17 @@ import sqlite3
 def load_db(dbfile):
     ret = None
     room_dict = {}
-    # inv_dict = {}
 
     con = sqlite3.connect(dbfile)
     for id, jsontext in con.execute("select id, json from rooms"):
-        # jsontext = row[0]
-        # print(jsontext)
         d = json.loads(jsontext)
         d['id'] = id
         ret = Room(**d)
         room_dict[id] = ret
-        # a['inv'] = inv
-        # ret1 = Item(**item)
-        # inv_dict[inv] = ret1
 
     con.close()
 
     return room_dict
-
-
-# def get_inventory(dbfile):
-#     ret = None
-#     inv = []
-#     con = sqlite3.connect(dbfile)
-#     for obj, jsontext in con.execute("select obj, json from rooms"):
-#         a = json.loads(jsontext)
-#         a['obj'] = obj
-#         ret = Room(**d)
-#         inv.append(obj)
-
-#     con.close()
 
 
 class Item():
@@ -65,22 +46,6 @@ class Room():
             return self.neighbors[direction]
         else:
             return None
-
-    def get_inventory(self, args):
-        """Player's inventory"""
-        if args not in self.loc.inv:
-            # if args == args.name:
-            print('\nSorry, you cannot put this object in your inventory.\n')
-            return
-        else:
-            for args in self.loc.inv:
-                # if args == args.name:
-                self.loc.inv.append(args)
-                self.loc.inv.remove(args)
-                print('\nOkay.\n')
-                break
-            else:
-                print('\nThere is no {} here!\n'.format(args))
 
     def north(self):
         return self._neighbor('n')
