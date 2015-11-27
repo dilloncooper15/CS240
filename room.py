@@ -66,11 +66,21 @@ class Room():
         else:
             return None
 
-    # def _description(self, direction):
-    #     if direction in self.description:
-    #         return self.description
-    #     else:
-    #         return None
+    def get_inventory(self, args):
+        """Player's inventory"""
+        if args not in self.loc.inv:
+            # if args == args.name:
+            print('\nSorry, you cannot put this object in your inventory.\n')
+            return
+        else:
+            for args in self.loc.inv:
+                # if args == args.name:
+                self.loc.inv.append(args)
+                self.loc.inv.remove(args)
+                print('\nOkay.\n')
+                break
+            else:
+                print('\nThere is no {} here!\n'.format(args))
 
     def north(self):
         return self._neighbor('n')

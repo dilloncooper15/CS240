@@ -4,6 +4,12 @@ import textwrap
 import shutil
 import tempfile
 
+print()
+print('\n-_-_-WELCOME TO THE ADELPHIC HALL TEXT BASED ADVENTURE GAME!-_-_-\n')
+for line in textwrap.wrap('INSTRUCTIONS: Here are the commands implimented in the ADELPHIC HALL ADVENTURE GAME that you can utilize at your discretion: n – Allows the player to go North; s – Allows the player to go South; e – allows the player to go East; w – Allows the player to go West. If there are stairs: u - Allows the player to go up; d - Allows the player to go down. look - Allows the player to look around. If there are objects in the room: get - Allows the player to place an item into their by typing get and then the object\'s name; drop - Allows the player to remove an item that exists in their inventory and place it within the room they are currently residing; inventory - Allows the player to peek inside their inventory; quit - Allows the user to promptly exit the game.', 72):
+    print(line)
+print()
+
 
 class Game(cmd.Cmd):
     def __init__(self):
@@ -15,16 +21,15 @@ class Game(cmd.Cmd):
 
         self.room_dict = load_db(self.dbfile)
         # room_dict = {1: room, 2: room, 3: room}
-
         self.loc = self.room_dict[1]
         self.look()
 
     def move(self, dir):
         newroom = self.loc._neighbor(dir)
         if newroom is None:
-            print("you can't go that way!")
+            print("\nyou can't go that way!\n")
         else:
-            print()
+            # print()
             self.loc = self.room_dict[newroom]
             self.look()
             # print(self.loc.name)
