@@ -55,6 +55,7 @@ class Room():
         self.name = name
         self.description = description
         self.neighbors = neighbors
+        self.inv = []
         self.visited = False
         for item in inv:
             self.inv.append(Item(**item))

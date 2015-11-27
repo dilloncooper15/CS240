@@ -1,5 +1,5 @@
 {"name": "First Floor Round Room",
  "description": "You're standing in the First Floor Round Room. Your only exit is back into the Foyer (East)",
  "neighbors": {"e":2},
- "inv": [{"name": "None", "descript": "None."}]
+ "inv": []
 }

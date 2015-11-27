@@ -1,5 +1,5 @@
 {"name": "Basement",
  "description": "You are now in the basement. You have the visibility of a bat, minus the sonar (of course). To the north there is a dark room round room. To the east there is a hidden room and to the west there is a very large room. Behind you is the staircase that leads back up to the Foyer.",
  "neighbors": {"n":11, "up":2, "e":13, "w":12},
- "inv": [{"name": "None", "descript": "None."}]
+ "inv": []
 }

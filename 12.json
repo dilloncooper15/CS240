@@ -1,5 +1,5 @@
 {"name": "Kitchen",
  "description": "You're standing in the Kitchen. A sink and stove are in the corner. You can exit the room by heading East.",
  "neighbors": {"e":6},
- "inv": [{"name": "None", "descript": "None."}]
+ "inv": []
 }
