@@ -80,22 +80,45 @@ class Game(cmd.Cmd):
         shutil.copyfile(self.dbfile, args)
         print("The game was saved to {0}".format(args))
 
-    def get_inventory(self, args):
-        """Player's inventory"""
+    def do_get(self, args):
+        """Transfers an item from the room to the player's inventory."""
         if args not in self.loc.inv:
             # if args == args.name:
             print('\nSorry, you cannot put this object in your inventory.\n')
             return
         else:
-            for args in self.loc.inv:
-                # if args == args.name:
-                self.loc.inv.append(args)
-                self.loc.inv.remove(args)
-                print('\nOkay.\n')
-                break
+            for item in self.loc.inv:
+                if item.name == args:
+                    self.inv.append(item)
+                    self.loc.inv.remove(item)
+                    print('\nOkay.\n')
+                    break
             else:
                 print('\nThere is no {} here!\n'.format(args))
 
+    def do_drop(self, args):
+        """Removes an item from the player's inventory."""
+        for item in self.inv:
+            if item.name == args:
+                self.loc.inv.append(item)
+                self.inv.remove(item)
+                print('\nThe deed is done.\n')
+                break
+        else:
+            print('\nYou cannot remove something you do not possess.\n')
+
+    def do_inventory(self, args):
+        """Displays what is in the player's inventory."""
+        output = ''
+        if self.loc.inv:
+            for item in self.loc.inv:
+                output += str(item)
+        if output:
+            output = '\nInventory:\n' + output
+        else:
+            output = '\nYou do not currently possess any items\
+            in your inventory.\n'
+            return output
 
 if __name__ == "__main__":
     g = Game()
