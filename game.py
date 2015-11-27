@@ -82,19 +82,14 @@ class Game(cmd.Cmd):
 
     def do_get(self, args):
         """Transfers an item from the room to the player's inventory."""
-        if args not in self.loc.inv:
-            # if args == args.name:
-            print('\nSorry, you cannot put this object in your inventory.\n')
-            return
+        for item in self.loc.inv:
+            if item.name == args:
+                self.inv.append(item)
+                self.loc.inv.remove(item)
+                print('\n{} is now in your inventory.\n'.format(args))
+                break
         else:
-            for item in self.loc.inv:
-                if item.name == args:
-                    self.inv.append(item)
-                    self.loc.inv.remove(item)
-                    print('\nOkay.\n')
-                    break
-            else:
-                print('\nThere is no {} here!\n'.format(args))
+            print('\nThere is no {} here!\n'.format(args))
 
     def do_drop(self, args):
         """Removes an item from the player's inventory."""
@@ -110,15 +105,15 @@ class Game(cmd.Cmd):
     def do_inventory(self, args):
         """Displays what is in the player's inventory."""
         output = ''
-        if self.loc.inv:
-            for item in self.loc.inv:
+        if self.inv:
+            for item in self.inv:
                 output += str(item)
         if output:
-            output = '\nInventory:\n' + output
+            output = '\nItems in your inventory:\n' + output
         else:
-            output = '\nYou do not currently possess any items\
-            in your inventory.\n'
-            return output
+            output = '\nYou do not currently possess any items in your\
+ inventory.\n'
+        print(output)
 
 if __name__ == "__main__":
     g = Game()
