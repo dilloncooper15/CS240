@@ -31,15 +31,17 @@ class Item():
 
 class Room():
     def __init__(self, id=0, name="A Room", description="An empty room",
-                 neighbors={}, inv=[]):
+                 neighbors={}, inv=[], flavorsentences=" "):
         self.ident = id
         self.name = name
         self.description = description
         self.neighbors = neighbors
         self.inv = []
+        self.flavorsentences = " "
         self.visited = False
         for item in inv:
             self.inv.append(Item(**item))
+            self.flavorsentences.append(str(Item(**item)))
 
     def _neighbor(self, direction):
         if direction in self.neighbors:
