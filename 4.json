@@ -1,5 +1,6 @@
 {"name": "Chapter Room",
  "description": "You tempt fate and slide open the pocket doors unvieling a beautiful room. Large paddles decorate the walls with names of former and current Adelphics. Your only exit is back into the Foyer (South)",
  "neighbors": {"s":2},
- "inv": []
+ "inv": [],
+ "flavorsentences": " "
 }

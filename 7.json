@@ -1,5 +1,6 @@
 {"name": "Second Floor Round Room",
  "description": "You're standing in the Second Floor Round Room. A television emits an eerie glow, illuminating the room. Returning to the Second Floor Landing is your only exit.",
  "neighbors": {"s":5},
- "inv": []
+ "inv": [],
+ "flavorsentences": " "
 }

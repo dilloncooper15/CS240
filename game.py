@@ -6,7 +6,7 @@ import tempfile
 
 print()
 print('\n-_-_-WELCOME TO THE ADELPHIC HALL TEXT BASED ADVENTURE GAME!-_-_-\n')
-for line in textwrap.wrap('INSTRUCTIONS: Here are the commands implimented in the ADELPHIC HALL ADVENTURE GAME that you can utilize at your discretion: n – Allows the player to go North; s – Allows the player to go South; e – allows the player to go East; w – Allows the player to go West. If there are stairs: u - Allows the player to go up; d - Allows the player to go down. look - Allows the player to look around. If there are objects in the room: get - Allows the player to place an item into their by typing get and then the object\'s name; drop - Allows the player to remove an item that exists in their inventory and place it within the room they are currently residing; inventory - Allows the player to peek inside their inventory; quit - Allows the user to promptly exit the game.', 72):
+for line in textwrap.wrap('INSTRUCTIONS: Here are the commands implimented in the ADELPHIC HALL ADVENTURE GAME that you can utilize at your discretion: n – Allows the player to go North; s – Allows the player to go South; e – allows the player to go East; w – Allows the player to go West. If there are stairs: u - Allows the player to go up; d - Allows the player to go down. look - Displays if there are any objects within the room. If there are objects in the room: get - Allows the player to place an item into their by typing get and then the object\'s name; drop - Allows the player to remove an item that exists in their inventory and place it within the room they are currently residing; inventory - Allows the player to peek inside their inventory; quit - Allows the user to promptly exit the game.', 72):
     print(line)
 print()
 
@@ -70,8 +70,13 @@ class Game(cmd.Cmd):
 
     def do_look(self, args):
         """Lets the user look around"""
-        self.look()
-        self.Room.description.append(self.Room.flavorsentences)
+        # self.look()
+        # self.Room.description.append(self.Room.flavorsentences)
+        for item in self.loc.inv:
+            print(item.descript)
+        else:
+            print("What are you blind? Sorry Steve Wonder, \
+there are no objects here.")
 
     def do_save(self, args):
         """Saves the game"""

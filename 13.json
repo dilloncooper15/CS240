@@ -1,5 +1,6 @@
 {"name": "Bar Room",
  "description": "You're standing in the Bar Room. To the East you see a door. Light from the outside is shinning in from a window over the door. To exit the Bar Room, head West.",
  "neighbors": {"e":14, "w":6},
- "inv": []
+ "inv": [],
+ "flavorsentences": " "
 }

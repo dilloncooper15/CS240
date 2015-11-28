@@ -1,5 +1,6 @@
 {"name": "Second Floor Landing",
  "description": "You're standing on the Second Floor Landing. You can head north and enter a door hidden behind a large wooden door. You can also go up to the third floor or descend down the stairs and return to the Foyer.",
  "neighbors": {"down":2, "n":7, "up":8},
- "inv": []
+ "inv": [],
+ "flavorsentences": " "
 }
