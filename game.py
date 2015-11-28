@@ -71,8 +71,7 @@ class Game(cmd.Cmd):
     def do_look(self, args):
         """Lets the user look around"""
         self.look()
-        print('{}, {}'.format(
-            self.loc.inv.name, self.loc.inv.descript))
+        self.Room.description.append(self.Room.flavorsentences)
 
     def do_save(self, args):
         """Saves the game"""
