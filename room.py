@@ -41,7 +41,11 @@ class Room():
         self.visited = False
         for item in inv:
             self.inv.append(Item(**item))
-            self.flavorsentences.append(str(Item(**item)))
+            self.flavorsentences.append(Item(**item))
+            # for i in self.flavorsentences:
+            #     self.flavorsentences += str(i) + " "
+            #     self.flavorsentences.append(Item(**item))
+            # self.flavorsentences = self.flavorsentences[:-1]
 
     def _neighbor(self, direction):
         if direction in self.neighbors:
