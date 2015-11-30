@@ -72,7 +72,7 @@ class Game(cmd.Cmd):
 
     def do_look(self, args):
         """Lets the user look around"""
-        # self.look()
+        self.look()
         # self.Room.description.append(self.Room.flavorsentences)
         if self.loc.inv:
             for item in self.loc.inv:
