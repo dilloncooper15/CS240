@@ -23,6 +23,7 @@ class Game(cmd.Cmd):
         # room_dict = {1: room, 2: room, 3: room}
         self.loc = self.room_dict[1]
         self.look()
+        # print()
 
     def move(self, dir):
         newroom = self.loc._neighbor(dir)
@@ -38,6 +39,7 @@ class Game(cmd.Cmd):
         print()
         for line in textwrap.wrap(self.loc.description, 72):
             print(line)
+        print()
 
     def do_up(self, args):
         """Go up"""
@@ -65,7 +67,7 @@ class Game(cmd.Cmd):
 
     def do_quit(self, args):
         """Leaves the game"""
-        print("Thank you for playing!")
+        print("\nThank you for playing!\n")
         return True
 
     def do_look(self, args):
@@ -74,10 +76,12 @@ class Game(cmd.Cmd):
         # self.Room.description.append(self.Room.flavorsentences)
         if self.loc.inv:
             for item in self.loc.inv:
+                print()
                 print(item.descript)
+            print()
         else:
-            print("What are you blind? Sorry Steve Wonder, \
-there are no objects here.")
+            print("\nWhat are you blind? Sorry Steve Wonder, \
+there are no objects here.\n")
 
     def do_save(self, args):
         """Saves the game"""

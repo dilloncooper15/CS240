@@ -26,7 +26,7 @@ class Item():
         self.descript = descript
 
     def __str__(self):
-        return "{}\n====\n{}\n".format(self.name, self.descript)
+        return "\n{}: {}\n".format(self.name, self.descript)
 
 
 class Room():
