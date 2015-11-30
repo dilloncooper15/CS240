@@ -72,8 +72,9 @@ class Game(cmd.Cmd):
         """Lets the user look around"""
         # self.look()
         # self.Room.description.append(self.Room.flavorsentences)
-        for item in self.loc.inv:
-            print(item.descript)
+        if self.loc.inv:
+            for item in self.loc.inv:
+                print(item.descript)
         else:
             print("What are you blind? Sorry Steve Wonder, \
 there are no objects here.")
